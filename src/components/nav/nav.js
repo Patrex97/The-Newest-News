@@ -1,7 +1,9 @@
 import "./nav.scss";
 
 const Nav = () => {
-  return <div>Navigation</div>;
+  return <div>
+    <img src="#" className="logo" />
+    </div>;
 };
 
 export default Nav;
