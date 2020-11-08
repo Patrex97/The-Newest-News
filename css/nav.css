@@ -1,0 +1,45 @@
+.Navigation {
+  display: -ms-grid;
+  display: grid;
+  width: 100vw;
+  -ms-grid-columns: 50px 1fr 55px 55px;
+      grid-template-columns: 50px 1fr 55px 55px;
+  -ms-grid-rows: 60px;
+      grid-template-rows: 60px;
+  background-color: black;
+  color: white;
+}
+
+.Navigation__logo {
+  width: 45px;
+  height: 45px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+}
+
+.Navigation__searchInput {
+  position: relative;
+  height: 30px;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  -ms-grid-column-align: center;
+      justify-self: center;
+  width: 90%;
+  font-size: 22px;
+  padding-left: 3px;
+}
+
+.Navigation__btn {
+  background-color: transparent;
+  border: 0;
+}
+
+.Navigation__btn .Navigation__icon {
+  width: 45px;
+  height: 45px;
+}
+/*# sourceMappingURL=nav.css.map */

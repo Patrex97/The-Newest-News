@@ -1,0 +1,23 @@
+.LoginMenu{
+    display:grid;
+    width:100vw;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 120px;
+    background-color:black;
+
+    &__container{
+        display:grid;
+
+        .LoginMenu__btn{
+            background-color: transparent;
+            align-self: center;
+            justify-self: center;
+            border:0;
+
+            .LoginMenu__image{
+                width:75px;
+                height:75px; 
+            }
+        }
+    }
+}
