@@ -1,11 +1,13 @@
+import React, {useEffect} from "react"
 import "./loginMenu.scss";
 import loginImage from "./login.png";
 import registerImage from "./register.png";
 
 const LoginMenu = ({display}) => {
-    const loginMenu = document.querySelector(".LoginMenu");
-    display ? loginMenu.style.display = "grid" : loginMenu.style.display = "none";
-
+    useEffect(() => { 
+        const loginMenu = document.querySelector(".LoginMenu");
+        display ? loginMenu.style.display = "grid" : loginMenu.style.display = "none";
+    })
   return (
     <div className="LoginMenu">
         <div className="LoginMenu__container">

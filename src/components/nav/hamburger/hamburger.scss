@@ -1,0 +1,36 @@
+.Hamburger{
+    display:grid;
+    width:100vw;
+    height: 100vh;
+    grid-template-columns: 1fr;
+    grid-template-rows: 5fr 1fr;
+    background-color:black;
+    padding: 30px 50px;
+
+
+    &__menu{
+        display:grid;
+        grid-template-columns: 1fr;
+        grid-template-rows: 30px 30px 30px 30px 30px 30px;
+        gap:25px 0px;
+        list-style-type: none;
+        font-size:27px;
+            
+        .menu__item{
+            justify-self: center;
+            text-align: center;
+        }
+    }
+
+    &__footer{
+        display:grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        padding:10px 0;
+        border-top: 2px solid white;
+        .hamburger__image{
+            align-self: center;
+            width:100%;
+        }
+    }
+}
