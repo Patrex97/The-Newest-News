@@ -71,4 +71,4 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/t
 
 
 
-https://github.com/Patrex97/The-Newest-News/blob/Patryk_branch/src/components/nav/logo.png
+![alt text](https://github.com/Patrex97/The-Newest-News/blob/Patryk_branch/src/components/nav/logo.png)
