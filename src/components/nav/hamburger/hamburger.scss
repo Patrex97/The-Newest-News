@@ -3,34 +3,68 @@
     width:100vw;
     height: 100vh;
     grid-template-columns: 1fr;
-    grid-template-rows: 5fr 1fr;
+    grid-template-rows: 2fr 1fr;
     background-color:black;
     padding: 30px 50px;
 
 
     &__menu{
+        justify-self: center;
         display:grid;
         grid-template-columns: 1fr;
-        grid-template-rows: 30px 30px 30px 30px 30px 30px;
-        gap:25px 0px;
+        grid-template-rows: repeat(7, 40px);
+        gap:15px 0px;
         list-style-type: none;
         font-size:27px;
+        width:100%;
+        max-width:300px;
             
         .menu__item{
+            position: relative;
             justify-self: center;
+            align-self: center;
             text-align: center;
+            cursor: pointer;
+            width:100%;
+            overflow: hidden;
+            transition: transform .1s ease-in;
+
+            &:hover{
+                transform:translateY(10%);
+            }
+
+            &:hover::after{
+                transform: translateX(0);
+            }
+
+            &::after{
+                content: "";
+                position: absolute;
+                background-color:white;
+                bottom:0;
+                left:0;
+                width: 100%;
+                height:1px;
+                transform: translateX(-100%);
+                transition: transform .1s ease-in;
+            }
         }
     }
 
     &__footer{
+        justify-self: center;
         display:grid;
         grid-template-columns: 1fr 1fr 1fr;
         gap: 10px;
         padding:10px 0;
         border-top: 2px solid white;
+        width:100%;
+        max-width:500px;
         .hamburger__image{
+            justify-self: center;
             align-self: center;
             width:100%;
+            max-width:100px;
         }
     }
 }

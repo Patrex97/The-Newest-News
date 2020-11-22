@@ -7,6 +7,9 @@
   -ms-grid-rows: 120px;
       grid-template-rows: 120px;
   background-color: black;
+  overflow: hidden;
+  -webkit-transition: height .3s ease-in;
+  transition: height .3s ease-in;
 }
 
 .LoginMenu__container {

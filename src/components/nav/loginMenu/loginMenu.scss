@@ -1,22 +1,50 @@
+@keyframes loading{
+    0.000%
+    {
+        height:0px;
+    }
+    100.000%
+    {
+        height:120px;
+    }
+}        
+
+.hideMenu{
+    animation: loading 1000ms;
+    animation-timing-function: steps(100);
+    animation-fill-mode: forwards;
+    animation-direction: reverse;
+}
+
+.showMenu{
+    animation: loading 1000ms;
+    animation-timing-function: steps(100);
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+}
+
 .LoginMenu{
-    display:grid;
     width:100vw;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 120px;
-    background-color:black;
+    overflow: hidden;
+    background-color:black;   
 
-    &__container{
-        display:grid;
+    &__main{
+        display:grid;   
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 120px;
+        .LoginMenu__container{
+            display:grid;
 
-        .LoginMenu__btn{
-            background-color: transparent;
-            align-self: center;
-            justify-self: center;
-            border:0;
+            .LoginMenu__btn{
+                background-color: transparent;
+                align-self: center;
+                justify-self: center;
+                border:0;
 
-            .LoginMenu__image{
-                width:75px;
-                height:75px; 
+                .LoginMenu__image{
+                    width:75px;
+                    height:75px; 
+                }
             }
         }
     }
