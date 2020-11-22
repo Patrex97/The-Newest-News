@@ -23,10 +23,6 @@ public class User {
   @OneToMany(mappedBy = "user")
   private List<FavoriteNews> favorite_news;
 
-  // @ManyToMany
-  // @JoinTable(name = "observed_publishers")
-  // private List<Publisher> publisher;
-
   public User() {}
 
   public int getId() {
@@ -68,5 +64,4 @@ public class User {
   public void setFavorite_news(List<FavoriteNews> favorite_news) {
     this.favorite_news = favorite_news;
   }
-
 }

@@ -6,7 +6,7 @@ import java.util.Optional;
 
 public interface NewsService {
 
-    News addNewNews(News news);
+  News addNewNews(News news);
 
-    Optional<News> getNews(Long id);
+  Optional<News> getNews(Long id);
 }

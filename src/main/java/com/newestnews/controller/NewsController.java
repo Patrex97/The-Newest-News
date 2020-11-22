@@ -12,23 +12,20 @@ import java.util.Optional;
 @RequestMapping("news")
 public class NewsController {
 
-    private NewsService newsService;
+  private NewsService newsService;
 
-    @Autowired
-    public NewsController(NewsService newsService) {
-        this.newsService = newsService;
-    }
+  @Autowired
+  public NewsController(NewsService newsService) {
+    this.newsService = newsService;
+  }
 
+  @PostMapping("/add")
+  public @ResponseBody ResponseEntity<News> addNews(@RequestBody News news) {
+    return ResponseEntity.ok(newsService.addNewNews(news));
+  }
 
-
-    @PostMapping("/add")
-    public @ResponseBody
-    ResponseEntity<News> addNews(@RequestBody News news) {
-        return ResponseEntity.ok(newsService.addNewNews(news));
-    }
-
-    @GetMapping("/{id}")
-    public @ResponseBody ResponseEntity<Optional<News>> getNewsById(@PathVariable Long id) {
-        return ResponseEntity.ok(newsService.getNews(id));
-    }
+  @GetMapping("/{id}")
+  public @ResponseBody ResponseEntity<Optional<News>> getNewsById(@PathVariable Long id) {
+    return ResponseEntity.ok(newsService.getNews(id));
+  }
 }

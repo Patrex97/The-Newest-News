@@ -11,21 +11,20 @@ import java.util.Optional;
 @Service
 public class NewsServiceImpl implements NewsService {
 
-    private NewsRepository newsRepository;
+  private NewsRepository newsRepository;
 
-    @Autowired
-    public NewsServiceImpl(NewsRepository newsRepository) {
-        this.newsRepository = newsRepository;
-    }
+  @Autowired
+  public NewsServiceImpl(NewsRepository newsRepository) {
+    this.newsRepository = newsRepository;
+  }
 
-    @Override
-    public News addNewNews(News news) {
-        return newsRepository.save(news);
-    }
+  @Override
+  public News addNewNews(News news) {
+    return newsRepository.save(news);
+  }
 
-    @Override
-    public Optional<News> getNews(Long id) {
-        return newsRepository.findById(id);
-    }
+  @Override
+  public Optional<News> getNews(Long id) {
+    return newsRepository.findById(id);
+  }
 }
-
