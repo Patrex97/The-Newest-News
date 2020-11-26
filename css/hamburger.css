@@ -9,6 +9,10 @@
       grid-template-rows: 2fr 1fr;
   background-color: black;
   padding: 30px 50px;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
 }
 
 .Hamburger__menu {

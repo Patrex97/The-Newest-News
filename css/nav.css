@@ -1,15 +1,16 @@
 .Navigation {
   display: -ms-grid;
   display: grid;
+  position: relative;
   width: 100%;
-  -ms-grid-columns: 50px 1fr 55px 55px;
-      grid-template-columns: 50px 1fr 55px 55px;
+  -ms-grid-columns: minmax(10%, 50px) 1fr 55px 55px;
+      grid-template-columns: minmax(10%, 50px) 1fr 55px 55px;
   -ms-grid-rows: 60px;
       grid-template-rows: 60px;
+  -webkit-column-gap: 5px;
+          column-gap: 5px;
   background-color: black;
   color: white;
-  -webkit-transition: height .1s ease-out;
-  transition: height .1s ease-out;
 }
 
 .Navigation__logo {
@@ -30,7 +31,7 @@
       align-self: center;
   -ms-grid-column-align: center;
       justify-self: center;
-  width: 90%;
+  width: 100%;
   font-size: 22px;
   padding-left: 3px;
 }
@@ -43,5 +44,9 @@
 .Navigation__btn .Navigation__icon {
   width: 45px;
   height: 45px;
+}
+
+.Navigation__btn:hover {
+  cursor: pointer;
 }
 /*# sourceMappingURL=nav.css.map */

@@ -1,32 +1,11 @@
-@keyframes loading{
-    0.000%
-    {
-        height:0px;
-    }
-    100.000%
-    {
-        height:120px;
-    }
-}        
-
-.hideMenu{
-    animation: loading 1000ms;
-    animation-timing-function: steps(100);
-    animation-fill-mode: forwards;
-    animation-direction: reverse;
-}
-
-.showMenu{
-    animation: loading 1000ms;
-    animation-timing-function: steps(100);
-    animation-fill-mode: forwards;
-    animation-direction: normal;
-}
-
 .LoginMenu{
     width:100vw;
     overflow: hidden;
     background-color:black;   
+    position: absolute;
+    top:100%;
+    left:0;
+    z-index: 1;
 
     &__main{
         display:grid;   

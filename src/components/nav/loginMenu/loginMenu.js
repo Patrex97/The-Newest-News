@@ -6,16 +6,10 @@ import registerImage from "./register.png";
 const LoginMenu = ({display}) => {
     useEffect(() => { 
         const loginMenu = document.querySelector(".LoginMenu");
-        if(display ){
-            loginMenu.classList.add("showMenu");
-            // loginMenu.classList.remove("hideMenu");
-        }else{
-            // loginMenu.classList.add("hideMenu");
-            loginMenu.classList.remove("showMenu");
-        }
+        display ? loginMenu.style.display = "grid" : loginMenu.style.display = "none";
     })
   return (
-    <div className="LoginMenu hideMenu">
+    <div className="LoginMenu">
         <div className="LoginMenu__main">
             <div className="LoginMenu__container">
                 <button className="LoginMenu__btn">

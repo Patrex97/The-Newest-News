@@ -1,0 +1,34 @@
+.Header{
+    position: relative;
+    height:200px;
+}
+
+.Header__button{
+    width:100%;
+    height:200px;
+    border:0;
+
+    &:hover{
+        cursor:pointer;
+    }
+}
+
+.Header__image{
+    width:100%;
+    height:200px;
+}
+
+.Header__text{
+    position: absolute;
+    left:0;
+    bottom:0;
+    color:white;
+    background-color: rgba($color: #000000, $alpha: 0.6);
+    font-size:18px;
+    text-align: center;
+    height:fit-content;
+    max-height: 35%;
+    padding:10px;
+    width:100%;
+    pointer-events: none;
+}

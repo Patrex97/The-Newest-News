@@ -1,1 +1,2 @@
-/* No CSS *//*# sourceMappingURL=header.min.css.map */
+.Header{position:relative;height:200px}.Header__button{width:100%;height:200px;border:0}.Header__button:hover{cursor:pointer}.Header__image{width:100%;height:200px}.Header__text{position:absolute;left:0;bottom:0;color:white;background-color:rgba(0,0,0,0.6);font-size:18px;text-align:center;height:-webkit-fit-content;height:-moz-fit-content;height:fit-content;max-height:35%;padding:10px;width:100%;pointer-events:none}
+/*# sourceMappingURL=header.min.css.map */

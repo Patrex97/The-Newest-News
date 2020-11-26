@@ -1,23 +1,28 @@
 .LoginMenu {
+  width: 100vw;
+  overflow: hidden;
+  background-color: black;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1;
+}
+
+.LoginMenu__main {
   display: -ms-grid;
   display: grid;
-  width: 100vw;
   -ms-grid-columns: 1fr 1fr;
       grid-template-columns: 1fr 1fr;
   -ms-grid-rows: 120px;
       grid-template-rows: 120px;
-  background-color: black;
-  overflow: hidden;
-  -webkit-transition: height .3s ease-in;
-  transition: height .3s ease-in;
 }
 
-.LoginMenu__container {
+.LoginMenu__main .LoginMenu__container {
   display: -ms-grid;
   display: grid;
 }
 
-.LoginMenu__container .LoginMenu__btn {
+.LoginMenu__main .LoginMenu__container .LoginMenu__btn {
   background-color: transparent;
   -ms-flex-item-align: center;
       -ms-grid-row-align: center;
@@ -27,7 +32,7 @@
   border: 0;
 }
 
-.LoginMenu__container .LoginMenu__btn .LoginMenu__image {
+.LoginMenu__main .LoginMenu__container .LoginMenu__btn .LoginMenu__image {
   width: 75px;
   height: 75px;
 }
