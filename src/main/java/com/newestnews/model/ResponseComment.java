@@ -1,5 +1,7 @@
 package com.newestnews.model;
 
+import java.sql.Timestamp;
+
 import javax.persistence.*;
 
 @Entity
@@ -19,6 +21,10 @@ public class ResponseComment {
   @ManyToOne
   @JoinColumn(name = "response_comment_id")
   private Comment comment;
+  
+  private Timestamp createdAt;
+  
+  private Timestamp modifiedAt;
 
   public ResponseComment() {}
 
@@ -52,5 +58,21 @@ public class ResponseComment {
 
   public void setComment(Comment comment) {
     this.comment = comment;
+  }
+  
+  public Timestamp getCreatedAt() {
+	return createdAt;
+  }
+
+  public void setCreatedAt(Timestamp createdAt) {
+	this.createdAt = createdAt;
+  }
+  
+  public Timestamp getModifiedAt() {
+	return modifiedAt;
+  }
+
+  public void setModifiedAt(Timestamp modifiedAt) {
+	this.modifiedAt = modifiedAt;
   }
 }

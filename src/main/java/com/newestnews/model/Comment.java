@@ -2,6 +2,7 @@ package com.newestnews.model;
 
 import javax.persistence.*;
 import java.util.List;
+import java.sql.Timestamp;
 
 @Entity
 public class Comment {
@@ -19,7 +20,11 @@ public class Comment {
   @ManyToMany(mappedBy = "comment")
   @Column(name = "comment_id")
   private List<ResponseComment> response_comment;
-
+  
+  private Timestamp createdAt;
+  
+  private Timestamp modifiedAt;
+  
   public Comment() {}
 
   public int getId() {
@@ -53,4 +58,32 @@ public class Comment {
   public void setResponseComment(List<ResponseComment> responseComment) {
     this.response_comment = responseComment;
   }
+
+  public Timestamp getCreatedAt() {
+	return createdAt;
+  }
+
+  public void setCreatedAt(Timestamp createdAt) {
+	this.createdAt = createdAt;
+  }
+
+  public Timestamp getModifiedAt() {
+	return modifiedAt;
+  }
+
+  public void setModifiedAt(Timestamp modifiedAt) {
+	this.modifiedAt = modifiedAt;
+  }
+
+  public List<ResponseComment> getResponse_comment() {
+	return response_comment;
+  }
+
+  public void setResponse_comment(List<ResponseComment> response_comment) {
+	this.response_comment = response_comment;
+  }
+  
+  
+  
+  
 }

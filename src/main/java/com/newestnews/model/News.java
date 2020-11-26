@@ -1,6 +1,8 @@
 package com.newestnews.model;
 
 import javax.persistence.*;
+
+import java.sql.Timestamp;
 import java.util.List;
 
 @Entity
@@ -20,9 +22,10 @@ public class News {
   @ManyToOne
   @JoinColumn(name = "category_id")
   private Category category;
-
-  @OneToMany(mappedBy = "news")
-  private List<FavoriteNews> favorite_news;
+  
+  private Timestamp createdAt;
+  
+  private Timestamp modifiedAt;
 
   public News() {}
 
@@ -57,12 +60,21 @@ public class News {
   public void setCategory(Category category) {
     this.category = category;
   }
-
-  public List<FavoriteNews> getFavorite_news() {
-    return favorite_news;
+  
+  public Timestamp getCreatedAt() {
+	return createdAt;
   }
 
-  public void setFavorite_news(List<FavoriteNews> favorite_news) {
-    this.favorite_news = favorite_news;
+  public void setCreatedAt(Timestamp createdAt) {
+	this.createdAt = createdAt;
   }
+  
+  public Timestamp getModifiedAt() {
+	return modifiedAt;
+  }
+
+  public void setModifiedAt(Timestamp modifiedAt) {
+	this.modifiedAt = modifiedAt;
+  }
+
 }

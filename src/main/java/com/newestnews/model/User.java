@@ -1,6 +1,8 @@
 package com.newestnews.model;
 
 import javax.persistence.*;
+
+import java.sql.Timestamp;
 import java.util.List;
 
 @Entity
@@ -22,6 +24,20 @@ public class User {
 
   @OneToMany(mappedBy = "user")
   private List<FavoriteNews> favorite_news;
+  
+  @OneToMany(mappedBy="to")
+  private List<Followers> followers;
+
+  @OneToMany(mappedBy="from")
+  private List<Followers> following;
+
+  public List<Followers> getFollowers() {
+	return followers;
+  }
+  
+  private Timestamp createdAt;
+  
+  private Timestamp modifiedAt;
 
   public User() {}
 
@@ -64,4 +80,34 @@ public class User {
   public void setFavorite_news(List<FavoriteNews> favorite_news) {
     this.favorite_news = favorite_news;
   }
+  
+
+  public void setFollowers(List<Followers> followers) {
+	this.followers = followers;
+  }
+
+  public List<Followers> getFollowing() {
+	return following;
+  }
+
+  public void setFollowing(List<Followers> following) {
+	this.following = following;
+  }
+  
+  public Timestamp getCreatedAt() {
+	return createdAt;
+  }
+
+  public void setCreatedAt(Timestamp createdAt) {
+	this.createdAt = createdAt;
+  }
+  
+  public Timestamp getModifiedAt() {
+	return modifiedAt;
+  }
+
+  public void setModifiedAt(Timestamp modifiedAt) {
+	this.modifiedAt = modifiedAt;
+  }
+  
 }
