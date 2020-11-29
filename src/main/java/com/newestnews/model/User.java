@@ -1,68 +1,97 @@
 package com.newestnews.model;
 
+import org.springframework.security.core.GrantedAuthority;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
+import org.springframework.security.core.userdetails.UserDetails;
+
 import javax.persistence.*;
 
 import java.sql.Timestamp;
+import java.util.Collection;
+import java.util.Collections;
 import java.util.List;
 
 @Entity
-@Table(name = "logged_user")
-public class User {
+@Table(name = "users")
+public class User implements UserDetails {
 
   @Id
   @GeneratedValue(strategy = GenerationType.IDENTITY)
-  private int id;
+  private Integer id;
 
-  @Column(name = "firstname")
-  private String firstname;
+  private String username;
 
-  @Column(name = "lastname")
-  private String lastname;
+  private String password;
 
   @OneToMany(mappedBy = "user")
   private List<Comment> comment;
 
   @OneToMany(mappedBy = "user")
   private List<FavoriteNews> favorite_news;
-  
-  @OneToMany(mappedBy="to")
+
+  @OneToMany(mappedBy = "to")
   private List<Followers> followers;
 
-  @OneToMany(mappedBy="from")
+  @OneToMany(mappedBy = "from")
   private List<Followers> following;
 
   public List<Followers> getFollowers() {
-	return followers;
+    return followers;
   }
-  
+
   private Timestamp createdAt;
-  
+
   private Timestamp modifiedAt;
 
   public User() {}
 
-  public int getId() {
+  public Integer getId() {
     return id;
   }
 
-  public void setId(int id) {
+  public void setId(Integer id) {
     this.id = id;
   }
 
-  public String getFirstname() {
-    return firstname;
+  public String getUsername() {
+    return username;
   }
 
-  public void setFirstname(String firstname) {
-    this.firstname = firstname;
+  @Override
+  public boolean isAccountNonExpired() {
+    return true;
   }
 
-  public String getLastname() {
-    return lastname;
+  @Override
+  public boolean isAccountNonLocked() {
+    return true;
   }
 
-  public void setLastname(String lastname) {
-    this.lastname = lastname;
+  @Override
+  public boolean isCredentialsNonExpired() {
+    return true;
+  }
+
+  @Override
+  public boolean isEnabled() {
+    return true;
+  }
+
+  public void setUsername(String username) {
+    this.username = username;
+  }
+
+  @Override
+  public Collection<? extends GrantedAuthority> getAuthorities() {
+    return Collections.singleton(new SimpleGrantedAuthority("ROLE_PUBLISHER"));
+  }
+
+  public String getPassword() {
+    return password;
+  }
+
+  public void setPassword(String password) {
+    this.password = password;
   }
 
   public List<Comment> getComment() {
@@ -80,34 +109,32 @@ public class User {
   public void setFavorite_news(List<FavoriteNews> favorite_news) {
     this.favorite_news = favorite_news;
   }
-  
 
   public void setFollowers(List<Followers> followers) {
-	this.followers = followers;
+    this.followers = followers;
   }
 
   public List<Followers> getFollowing() {
-	return following;
+    return following;
   }
 
   public void setFollowing(List<Followers> following) {
-	this.following = following;
+    this.following = following;
   }
-  
+
   public Timestamp getCreatedAt() {
-	return createdAt;
+    return createdAt;
   }
 
   public void setCreatedAt(Timestamp createdAt) {
-	this.createdAt = createdAt;
+    this.createdAt = createdAt;
   }
-  
+
   public Timestamp getModifiedAt() {
-	return modifiedAt;
+    return modifiedAt;
   }
 
   public void setModifiedAt(Timestamp modifiedAt) {
-	this.modifiedAt = modifiedAt;
+    this.modifiedAt = modifiedAt;
   }
-  
 }
