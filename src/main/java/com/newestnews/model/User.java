@@ -23,6 +23,8 @@ public class User implements UserDetails {
 
   private String password;
 
+  private boolean isEnabled;
+
   @OneToMany(mappedBy = "user")
   private List<Comment> comment;
 
@@ -74,7 +76,11 @@ public class User implements UserDetails {
 
   @Override
   public boolean isEnabled() {
-    return true;
+    return isEnabled;
+  }
+
+  public void setEnabled(boolean enabled) {
+    isEnabled = enabled;
   }
 
   public void setUsername(String username) {

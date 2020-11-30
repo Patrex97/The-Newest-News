@@ -12,25 +12,29 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 @Configuration
 public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
-    private UserDetailsService userDetailsService;
+  private UserDetailsService userDetailsService;
 
-    @Bean
-    public PasswordEncoder getPasswordEncoder(){
-        return new BCryptPasswordEncoder();
-    }
+  @Bean
+  public PasswordEncoder getPasswordEncoder() {
+    return new BCryptPasswordEncoder();
+  }
 
-    public WebSecurityConfig(UserDetailsService userDetailsService) {
-        this.userDetailsService = userDetailsService;
-    }
+  public WebSecurityConfig(UserDetailsService userDetailsService) {
+    this.userDetailsService = userDetailsService;
+  }
 
-    @Override
-    protected void configure(AuthenticationManagerBuilder auth) throws Exception {
-        auth.userDetailsService(userDetailsService);
-    }
+  @Override
+  protected void configure(AuthenticationManagerBuilder auth) throws Exception {
+    auth.userDetailsService(userDetailsService);
+  }
 
   @Override
   protected void configure(HttpSecurity http) throws Exception {
     http.authorizeRequests()
+        .antMatchers("/news/add")
+        .hasRole("PUBLISHER")
+        .antMatchers("/news/{id}")
+        .hasRole("PUBLISHER")
         .and()
         .formLogin()
         .permitAll()
@@ -38,5 +42,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
         .csrf()
         .disable()
         .httpBasic();
-        }
+  }
 }

@@ -2,11 +2,9 @@ package com.newestnews.controller;
 
 import com.newestnews.model.User;
 import com.newestnews.service.serviceImpl.UserServiceImpl;
-import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.ResponseBody;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
+
+import javax.servlet.http.HttpServletRequest;
 
 @RestController
 public class UserController {
@@ -18,7 +16,13 @@ public class UserController {
   }
 
   @PostMapping("/register")
-  public @ResponseBody ResponseEntity<User> register(@RequestBody User user) {
-    return ResponseEntity.ok(userService.addUser(user));
+  public void register(@RequestBody User user, HttpServletRequest request) {
+    userService.addUser(user, request);
+  }
+
+  @RequestMapping("/verify-token")
+  public String confirmationByEmail(@RequestParam String token) {
+    userService.verifyToken(token);
+    return "Gratulacje.Twój adres mailowy został potwierdzony";
   }
 }
