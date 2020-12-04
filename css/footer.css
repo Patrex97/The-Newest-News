@@ -1,1 +1,62 @@
-/* No CSS *//*# sourceMappingURL=footer.css.map */
+.Footer {
+  margin-top: 500px;
+  background-color: black;
+  padding-top: 30px;
+  color: white;
+}
+
+.Footer a:link, .Footer a:visited {
+  text-decoration: none;
+  color: white;
+}
+
+.Footer .Footer__searchInput {
+  position: relative;
+  width: 90%;
+  height: 30px;
+  font-size: 1.5em;
+}
+
+.Footer .Footer__menu {
+  margin: 10px 10px;
+  border-bottom: 2px white solid;
+}
+
+.Footer .Footer__menu .menu__item {
+  list-style-type: none;
+  font-weight: bold;
+  font-size: 1.6em;
+  margin: .8em 0;
+}
+
+.Footer .Footer__credits {
+  margin: 0 10px;
+}
+
+.Footer .Footer__credits .creadits__container .credits__header {
+  font-size: 2em;
+}
+
+.Footer .Footer__credits .creadits__container .credits__name {
+  margin: .8em 0;
+}
+
+.Footer .Footer__follow {
+  margin: 10px 10px;
+}
+
+.Footer .Footer__follow .follow__header {
+  font-size: 2em;
+}
+
+.Footer .Footer__links {
+  margin: 0 10px;
+}
+
+.Footer .Footer__links .links__text {
+  border-right: 1px solid white;
+  margin-right: .5em;
+  margin-bottom: 5px;
+  padding-right: .5em;
+}
+/*# sourceMappingURL=footer.css.map */

@@ -1,0 +1,67 @@
+.Footer{
+    margin-top:500px; //Chwilowe do czasu zrobienia main
+    background-color:black;
+    padding-top: 30px;
+    color:white;
+
+    a:link, a:visited{
+        text-decoration: none;
+        color:white;
+    }
+
+    .Footer__searchInput{
+        position: relative;
+        width:90%;
+        height:30px;
+        font-size:1.5em;
+    }
+
+    .Footer__menu{
+        margin:10px 10px;
+        border-bottom: 2px white solid;
+        .menu__item{
+            list-style-type: none;
+            font-weight: bold;
+            font-size:1.6em;
+            margin:.8em 0;
+        }
+    }
+
+    .Footer__credits{
+        margin:0 10px;
+        .creadits__container{
+
+            .credits__header{
+                font-size:2em;
+            }
+
+            .credits__name{
+                margin:.8em 0;
+            }
+        }
+    }
+
+    .Footer__follow{
+        margin:10px 10px;
+        .follow__header{
+            font-size:2em;
+        }
+
+        // .follow__icons{
+
+        //     .icons__icon{
+
+        //     }
+        // }   
+    }
+
+    .Footer__links{
+        margin: 0 10px;
+        .links__text{
+            border-right:1px solid white;
+            margin-right:.5em;
+            margin-bottom:5px;
+            padding-right: .5em;
+        }
+    }
+}
