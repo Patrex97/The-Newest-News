@@ -2,8 +2,10 @@ package com.newestnews.model;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import java.sql.Timestamp;
-import java.util.List;
+//import java.util.List;
 
 @Entity
 @Table(name = "news")
@@ -21,13 +23,15 @@ public class News {
 
   @ManyToOne
   @JoinColumn(name = "category_id")
+  @JsonBackReference
   private Category category;
-  
+
   private Timestamp createdAt;
-  
+
   private Timestamp modifiedAt;
 
-  public News() {}
+  public News() {
+  }
 
   public long getId() {
     return id;
@@ -60,21 +64,21 @@ public class News {
   public void setCategory(Category category) {
     this.category = category;
   }
-  
+
   public Timestamp getCreatedAt() {
-	return createdAt;
+    return createdAt;
   }
 
   public void setCreatedAt(Timestamp createdAt) {
-	this.createdAt = createdAt;
+    this.createdAt = createdAt;
   }
-  
+
   public Timestamp getModifiedAt() {
-	return modifiedAt;
+    return modifiedAt;
   }
 
   public void setModifiedAt(Timestamp modifiedAt) {
-	this.modifiedAt = modifiedAt;
+    this.modifiedAt = modifiedAt;
   }
 
 }

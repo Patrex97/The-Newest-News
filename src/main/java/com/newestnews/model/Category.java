@@ -1,6 +1,9 @@
 package com.newestnews.model;
 
 import javax.persistence.*;
+
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.util.List;
 
 @Entity
@@ -14,6 +17,7 @@ public class Category {
   private String name;
 
   @OneToMany(mappedBy = "category")
+  @JsonManagedReference
   private List<News> news;
 
   public Category() {}
