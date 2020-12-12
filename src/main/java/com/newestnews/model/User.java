@@ -6,6 +6,8 @@ import org.springframework.security.core.userdetails.UserDetails;
 
 import javax.persistence.*;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.Collections;
@@ -26,6 +28,7 @@ public class User implements UserDetails {
   private boolean isEnabled;
 
   @OneToMany(mappedBy = "user")
+  @JsonManagedReference
   private List<Comment> comment;
 
   @OneToMany(mappedBy = "user")

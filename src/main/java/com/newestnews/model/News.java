@@ -3,9 +3,11 @@ package com.newestnews.model;
 import javax.persistence.*;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 
 import java.sql.Timestamp;
 //import java.util.List;
+import java.util.List;
 
 @Entity
 @Table(name = "news")
@@ -20,6 +22,10 @@ public class News {
 
   @Column(name = "content")
   private String content;
+
+  @OneToMany(mappedBy = "news")
+  @JsonManagedReference
+  private List<Comment> comment;
 
   @ManyToOne
   @JoinColumn(name = "category_id")
@@ -79,6 +85,14 @@ public class News {
 
   public void setModifiedAt(Timestamp modifiedAt) {
     this.modifiedAt = modifiedAt;
+  }
+
+  public void setComment(List<Comment> comment) {
+    this.comment = comments;
+  }
+
+  public List<Comment> getComment() {
+    return comment;
   }
 
 }
